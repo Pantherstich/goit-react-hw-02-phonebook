@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import { Button, ContForm, Input, Label } from './ContactForm.styled';
 import { nanoid } from 'nanoid';
 
+const nameInputId = nanoid();
+const numberInputId = nanoid();
+
 export class ContactForm extends Component {
   state = {
     name: '',
@@ -10,6 +13,7 @@ export class ContactForm extends Component {
   };
 
   nameInputId = nanoid();
+  numberInputId = nanoid();
 
   onChangeFilter = event => {
     const { name, value, id } = event.currentTarget;
@@ -32,30 +36,30 @@ export class ContactForm extends Component {
       name: '',
       number: '',
     });
-    this.nameInputId = nanoid();
+    // this.nameInputId = nanoid();
   };
   render() {
     return (
       <ContForm onSubmit={this.handleSubmit}>
-        <Label htmlFor={this.nameInputId}>
+        <Label htmlFor={nameInputId}>
           Name
           <Input
             type="text"
             name="name"
             value={this.state.name}
             onChange={this.onChangeFilter}
-            id={this.nameInputId}
+            id={nameInputId}
             required
           />
         </Label>
-        <Label htmlFor={this.nameInputId}>
+        <Label htmlFor={numberInputId}>
           Number
           <Input
             type="tel"
             name="number"
             value={this.state.number}
             onChange={this.onChangeFilter}
-            id={this.nameInputId}
+            id={numberInputId}
             required
           />
         </Label>
