@@ -2,10 +2,11 @@ import styled from 'styled-components';
 
 export const Item = styled.li`
   color: #000000;
-  margin-bottom: 16px;
+  margin-bottom: 24px;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  padding: 0 40px;
+  padding: 0 24px;
 `;
 export const DelButton = styled.button`
   width: 160px;
